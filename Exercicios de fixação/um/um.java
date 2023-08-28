@@ -1,5 +1,7 @@
 package um;
 
+import java.text.DecimalFormat;
+
 public class um {
   public double a, b, h, hr;
 
@@ -13,7 +15,8 @@ public class um {
 
   public void Hypotenusa() {
     operation();
-    System.out.println("o valor da Hypotenusa é: " + hr);
+    DecimalFormat formatador = new DecimalFormat("0.00");
+    System.out.println("o valor da Hypotenusa é: " + formatador.format(hr));
   }
 
 }
