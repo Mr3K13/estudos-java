@@ -16,7 +16,7 @@ public class um {
   public void Hypotenusa() {
     operation();
     DecimalFormat formatador = new DecimalFormat("0.00");
-    System.out.println("o valor da Hypotenusa é: " + formatador.format(hr));
+    System.out.println("o valor da Hypotenusa és : " + formatador.format(hr));
   }
 
 }
