@@ -2,7 +2,7 @@ package um;
 
 import java.util.Scanner;
 
-public class umf {
+public class umm {
   public static void main(String[] args) {
     um x = new um();
     Scanner sc = new Scanner(System.in);
