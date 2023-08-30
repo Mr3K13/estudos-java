@@ -1,7 +1,7 @@
 package treis;
 
 public class treis {
-  public double nota1, nota2, media, mediam = 14;
+  public double nota1, nota2, media, mediam;
 
   public void operacao() {
     media = (nota1 + nota2) / 2;
