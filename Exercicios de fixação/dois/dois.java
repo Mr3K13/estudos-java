@@ -1,26 +1,26 @@
 package dois;
 
-public class dois {
-  public double total = 1000, s, tx, d;
+public class Dois {
+  double total;
 
-  public void saque() {
-    tx = (s + 0.5) / 100;
-    total = total - s - tx;
+  public Dois(double totalInicial) {
+    this.total = totalInicial;
   }
 
-  public void deposito() {
-    total = total + d;
-
+  public void saque(double saque) {
+    double taxa = (saque * 0.05);
+    this.total -= (saque + taxa);
   }
 
-  public void reset() {
-    s = 0;
-    tx = 0;
-    d = 0;
-
+  public void deposito(double valor) {
+    this.total += valor;
   }
 
-  public void conta() {
-    System.out.println("O seu saldo total é de: " + total);
+  public String conta() {
+    return ("\nO seu saldo total é de: " + this.total + "\n");
+  }
+
+  public double valorTaxa(double valor) {
+    return (valor * 0.05);
   }
 }

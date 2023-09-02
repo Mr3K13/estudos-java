@@ -3,59 +3,55 @@ package dois;
 import java.util.Scanner;
 
 public class doism {
-  public static void main(String[] args) throws InterruptedException {
 
-    dois x = new dois();
+  public static void main(String[] args) throws InterruptedException {
+    Dois x = new Dois(1000);
+    double valor = 0;
+    menu(x, valor);
+  }
+
+  public static void menu(Dois x, double valor) throws InterruptedException {
+    System.out.println("\nO que o Sr.(a) deseja ? \n1 - Sacar\n2 - Depositar\n3 - Extrato\n0 - Sair");
     Scanner sc = new Scanner(System.in);
-    System.out.print("O que o Sr.(a) deseja ?");
-    System.out.print("\n1 - Sacar");
-    System.out.print("\n2 - Depositar");
-    System.out.print("\n3 - Extrato");
-    System.out.print("\n0 - Sair");
-    System.out.print("\n");
-    int resposta = (sc.nextInt());
+    int resposta = Integer.parseInt(sc.nextLine());
+
     switch (resposta) {
       case 1:
-        Scanner sx = new Scanner(System.in);
-        System.out.println("Qual valor o Sr.(a) deseja sacar? ");
-        x.s = (sx.nextDouble());
-        x.saque();
-        Thread.sleep(20);
-        x.reset();
-        sx.close();
-        main(args);
+
+        System.out.print("\nQual valor o Sr.(a) deseja sacar? ");
+        valor = Double.parseDouble(sc.nextLine());
+        x.saque(valor);
+        System.out.print("\nO valor da sua taxa é R$");
+        System.out.print(x.valorTaxa(valor));
+        Thread.sleep(1000);
+        menu(x, valor);
         break;
 
       case 2:
-        Scanner dx = new Scanner(System.in);
-        System.out.println("Qual valor o Sr.(a) depositar? ");
-        x.d = (dx.nextDouble());
-        x.deposito();
-        Thread.sleep(20);
-        x.reset();
-        dx.close();
+        System.out.print("\nQual valor o Sr.(a) depositar? ");
+        valor = Double.parseDouble(sc.nextLine());
+        x.deposito(valor);
         Thread.sleep(1000);
-        main(args);
+        menu(x, valor);
         break;
 
       case 3:
-        x.conta();
+        System.out.println(x.conta());
         Thread.sleep(1000);
-        main(args);
+        menu(x, valor);
         break;
 
       case 0:
-        System.out.println("Até a próxima.");
+        System.out.println("\nAté a próxima.");
         sc.close();
 
         break;
       default:
-        System.out.println("Por favor colocar um número válido.");
+        System.out.println("\nPor favor colocar um número válido.");
         Thread.sleep(1000);
-        main(args);
+        menu(x, valor);
         break;
     }
-
   }
 
 }
